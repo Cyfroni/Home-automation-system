@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <Button
+                android:id="@+id/balconyButtons_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Balcony Buttons"
+                android:onClick="select"
+                android:layout_margin="5dp"
+                android:background="@color/clickable"/>
+            <Button
+                android:id="@+id/balconyArea_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Balcony Area"
+                android:onClick="select"
+                android:layout_margin="5dp"
+                android:background="@color/clickable"/>
+        </LinearLayout>
+
+</LinearLayout>

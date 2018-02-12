@@ -1,0 +1,31 @@
+##Orange Pi One
+##Alwinner H3
+##QuadCore-512MB RAM
+
+root
+#orangepi
+u---
+
+http://malinowepi.pl/post/40023681030/zdalny-pulpit-instalacja-vnc
+
+https://www.youtube.com/watch?v=r83Vs3pcuVE
+
+VNC:
+---A
+
+https://diyprojects.io/orange-pi-onelite-tutorial-use-gpio-python-pinouts/#.Wnh6W6jiaM8
+
+https://forum.armbian.com/topic/2029-set-static-ip-in-jessie-server-on-orange-pi-one/
+
+pscp.exe <from> <to>
+
+pscp.exe root@192.168.101:/root/Desktop/orangepi/Server.py
+pscp.exe C:\Users\ADAM\Documents\AllProjects\ZZZMulti\OrangePi\PythonServer\Server.py
+
+##Downloads
+Raspbian_For_OrangePi_PC_v0_8_0.img
+orangepi_PC_gpio_pyH3-master
+
+##Programs
+PuTTY
+TightVNC Viewer

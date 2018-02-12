@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="clickable">#3f59b5</color>
+    <color name="unclickable">#808080</color>
+    <color name="light">#e6c348</color>
+    <color name="white">#eae9e4</color>
+    <color name="dark">#434342</color>
+    <color name="black">#252525</color>
+
+</resources>

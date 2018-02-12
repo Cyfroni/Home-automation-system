@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:textColor="#0f249c"
+        android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/start_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="START"
+                android:background="@color/unclickable"
+                android:onClick="start"
+                android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/connect_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/clickable"
+                android:text="Connect"
+                android:onClick="connect"
+                android:layout_margin="5dp"/>
+
+            <EditText
+                android:id="@+id/ip_f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/default_ip"
+                android:layout_margin="5dp"/>
+
+            <EditText
+                android:id="@+id/port_f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/default_port"
+                android:layout_margin="5dp"/>
+
+            <Button
+                android:id="@+id/options_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/clickable"
+                android:text="Options"
+                android:onClick="options"
+                android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/exit_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/clickable"
+                android:text="Shutdown"
+                android:onClick="shutDown"
+                android:layout_margin="5dp"/>
+
+            <TextView
+                android:id="@+id/info_f"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text=""
+                android:textSize="30sp"
+                android:layout_margin="5dp"/>
+        </LinearLayout>
+
+</LinearLayout>
