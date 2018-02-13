@@ -19,7 +19,7 @@ https://forum.armbian.com/topic/2029-set-static-ip-in-jessie-server-on-orange-pi
 
 pscp.exe <from> <to>
 
-pscp.exe root@192.168.101:/root/Desktop/orangepi/Server.py
+root@192.168.101:/root/Desktop/orangepi/Server.py
 pscp.exe C:\Users\ADAM\Documents\AllProjects\ZZZMulti\OrangePi\PythonServer\Server.py
 
 ##Downloads
@@ -29,3 +29,9 @@ orangepi_PC_gpio_pyH3-master
 ##Programs
 PuTTY
 TightVNC Viewer
+
+
+
+https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/net.md
+https://blog.christophersmart.com/2016/10/23/building-and-booting-upstream-linux-and-u-boot-for-orange-pi-one-arm-board/
+https://forum.armbian.com/topic/3362-orange-pi-pc-pxe-boot-boot-over-network/
