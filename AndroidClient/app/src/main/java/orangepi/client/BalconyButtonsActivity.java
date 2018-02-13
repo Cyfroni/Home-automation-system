@@ -14,6 +14,7 @@ import static orangepi.client.MainActivity.in;
 import static orangepi.client.MainActivity.out;
 import static orangepi.client.MainActivity.status;
 import static orangepi.client.MainActivity.synchronizationEveryClick;
+import static orangepi.client.MainActivity.testMode;
 
 
 public class BalconyButtonsActivity extends AppCompatActivity {
@@ -26,11 +27,9 @@ public class BalconyButtonsActivity extends AppCompatActivity {
                 for (String string : strings) {
                     out.writeChars(string);
                     out.flush();
-                    in.skipBytes(1);
+                    if(in.readByte() != '0') return false;
                 }
-            }catch(Exception e) {
-                e.printStackTrace();
-                return false;
+            }catch(Exception ignored) {
             }
             return true;
         }
@@ -75,6 +74,14 @@ public class BalconyButtonsActivity extends AppCompatActivity {
             }
         }
 
+        if (testMode)
+        {
+            setTitle(getResources().getString(R.string.app_name)  + " [Test mode]");
+            findViewById(R.id.background_BBA).setBackgroundColor(
+                    getResources().getColor(R.color.unclickable)
+            );
+        }
+
     }
 
     public void action(View view) {
@@ -93,7 +100,7 @@ public class BalconyButtonsActivity extends AppCompatActivity {
             b.setTextColor(getResources().getColor(R.color.black));
             message = message + "L";
         }
-        if (synchronizationEveryClick) new SendTask().execute(message.toString());
+        if (synchronizationEveryClick && !testMode) new SendTask().execute(message.toString());
 
     }
 
@@ -109,6 +116,6 @@ public class BalconyButtonsActivity extends AppCompatActivity {
 
             messages[i] = message.toString();
         }
-        new SendTask().execute(messages);
+        if (!testMode) new SendTask().execute(messages);
     }
 }

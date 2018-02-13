@@ -12,5 +12,12 @@
         android:text="Every click synchronization"
         android:onClick="option"
         android:layout_margin="10dp"/>
+    <Switch
+        android:id="@+id/switch_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test mode"
+        android:onClick="option"
+        android:layout_margin="10dp"/>
 
 </LinearLayout>

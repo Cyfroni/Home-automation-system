@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 import static orangepi.client.MainActivity.connection;
+import static orangepi.client.MainActivity.testMode;
 
 public class ChooseActivity extends AppCompatActivity {
 
@@ -19,6 +20,13 @@ public class ChooseActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_choose);
+        if (testMode)
+        {
+            setTitle(getResources().getString(R.string.app_name)  + " [Test mode]");
+            findViewById(R.id.background_CA).setBackgroundColor(
+                    getResources().getColor(R.color.unclickable)
+            );
+        }
     }
 
     public void select(View view) {

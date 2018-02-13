@@ -7,6 +7,7 @@ import android.view.WindowManager;
 import android.widget.Switch;
 
 import static orangepi.client.MainActivity.synchronizationEveryClick;
+import static orangepi.client.MainActivity.testMode;
 
 public class OptionsActivity extends AppCompatActivity {
 
@@ -18,8 +19,9 @@ public class OptionsActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_options);
-        Switch sw = findViewById(R.id.switch_1);
-        sw.setChecked(synchronizationEveryClick);
+
+        ((Switch)findViewById(R.id.switch_1)).setChecked(synchronizationEveryClick);
+        ((Switch)findViewById(R.id.switch_2)).setChecked(testMode);
     }
 
     public void option(View view) {
@@ -28,6 +30,9 @@ public class OptionsActivity extends AppCompatActivity {
         {
             case R.id.switch_1:
                 synchronizationEveryClick = !synchronizationEveryClick;
+                break;
+            case R.id.switch_2:
+                testMode = !testMode;
                 break;
             default:
                 return;

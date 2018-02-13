@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 
+import static orangepi.client.MainActivity.testMode;
+
 public class BalconyAreaActivity extends AppCompatActivity {
 
     @Override
@@ -14,5 +16,13 @@ public class BalconyAreaActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_balcony_area);
+
+        if (testMode)
+        {
+            setTitle(getResources().getString(R.string.app_name)  + " [Test mode]");
+            findViewById(R.id.background_BAA).setBackgroundColor(
+                    getResources().getColor(R.color.unclickable)
+            );
+        }
     }
 }

@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     static DataOutputStream out;
     static DataInputStream in;
     static int connection = -1;
+    static boolean testMode = false;
     static boolean synchronizationEveryClick = true;
     static boolean status[] = {
             false, false,
@@ -35,25 +36,30 @@ public class MainActivity extends AppCompatActivity {
     TextView portView;
     TextView infoView;
 
-    class Connect extends AsyncTask<Void, Void, Void> {
+    class Connect extends AsyncTask<Void, Void, Boolean> {
 
-        protected Void doInBackground(Void... arg0) {
+        protected Boolean doInBackground(Void... arg0) {
             try {
                 soc = new Socket(hostView.getText().toString(), Integer.parseInt(portView.getText().toString()));
                 out = new DataOutputStream(soc.getOutputStream());
                 in = new DataInputStream(soc.getInputStream());
-                connection = 1;
-            } catch (Exception e) {
-                e.printStackTrace();
+
+                out.writeChars("XXX");
+                out.flush();
+                if(in.readByte() == '1') return true;
+            } catch (Exception ignored) {
+
             }
-            return null;
+            return false;
         }
 
-        protected void onPostExecute(Void result) {
-            if (connection == 1) {
+        protected void onPostExecute(Boolean result) {
+            if (result) {
                 infoView.setText("Connected successfully");
                 cb.setText("Disconnect");
                 sb.setBackgroundColor(getResources().getColor(R.color.clickable));
+                connection = 1;
+                testMode = false;
             }
             else {
                 infoView.setText("Connection Error");
@@ -85,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void start(View view) {
-        if (connection == 1) {
+        if (connection == 1 || testMode) {
             startActivity(new Intent(this, ChooseActivity.class));
         }
     }
@@ -127,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
                                 if(connection == 1) {
                                     out.writeChars("SHD");
                                     out.flush();
+                                    //if(in.readByte() != '1') throw new Exception("error");
                                     connection = -1;
                                 }
                                 finish();
