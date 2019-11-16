@@ -1,1 +1,1 @@
-# OrangePi
+# Home automation system
